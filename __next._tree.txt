@@ -1,0 +1,4 @@
+:HL["/ecogrid-ai/_next/static/chunks/185ew7rrs3fre.css","style"]
+:HL["/ecogrid-ai/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+1:[["children",{"s":"__PAGE__","h":160}]]
+0:{"b":"rZ4qOgxyOpTelWgPNY2F6","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
