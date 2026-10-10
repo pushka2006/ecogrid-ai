@@ -41,7 +41,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   const unreadCount = alerts.filter(a => !a.read).length;
 
   return (
-    <header className="sticky top-0 z-30 bg-white/95 backdrop-blur-xs border-b border-gray-200/80 px-6 py-3 flex items-center justify-between shadow-2xs">
+    <header className="relative sticky top-0 z-30 bg-white/95 backdrop-blur-xs border-b border-gray-200/80 px-6 py-3 flex items-center justify-between shadow-2xs">
       {/* Global Search input matching screenshot */}
       <div className="flex-1 max-w-xl">
         <div className="relative">
@@ -195,56 +195,54 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
       </div>
 
-      {/* Role Switcher Modal */}
+      {/* Role Switcher Dropdown */}
       {showRoleModal && (
-        <div className="fixed inset-0 z-50 bg-black/30 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-sm w-full p-5 shadow-2xl border border-gray-100 animate-in zoom-in-95">
-            <div className="flex items-center justify-between pb-3 border-b border-gray-100">
-              <div className="flex items-center gap-2">
-                <ShieldCheck className="w-5 h-5 text-emerald-600" />
-                <h3 className="font-semibold text-gray-900 text-base">Select User Persona</h3>
-              </div>
-              <button
-                onClick={() => setShowRoleModal(false)}
-                className="text-gray-400 hover:text-gray-600"
-              >
-                <X className="w-4 h-4" />
-              </button>
+        <div className="absolute right-6 top-14 z-50 bg-white rounded-2xl max-w-sm w-80 sm:w-96 p-4 shadow-2xl border border-gray-100 animate-in fade-in slide-in-from-top-2">
+          <div className="flex items-center justify-between pb-2 border-b border-gray-100">
+            <div className="flex items-center gap-2">
+              <ShieldCheck className="w-4 h-4 text-emerald-600" />
+              <h3 className="font-semibold text-gray-900 text-sm">Select User Persona</h3>
             </div>
-            <p className="text-xs text-gray-500 mt-2 mb-4">
-              Switch roles to experience role-based access control (RBAC) features:
-            </p>
-            <div className="space-y-2">
-              {(['Admin', 'Facility Manager', 'Collection Team', 'Analyst'] as UserRole[]).map(
-                (role) => (
-                  <button
-                    key={role}
-                    onClick={() => {
-                      onRoleChange(role);
-                      setShowRoleModal(false);
-                    }}
-                    className={`w-full p-3 text-left rounded-xl border flex items-center justify-between text-xs font-medium transition-all ${
-                      userRole === role
-                        ? 'border-emerald-500 bg-emerald-50/70 text-emerald-900 font-semibold ring-1 ring-emerald-500'
-                        : 'border-gray-200 hover:border-gray-300 text-gray-700 hover:bg-gray-50'
-                    }`}
-                  >
-                    <div>
-                      <span className="block text-sm font-semibold">{role}</span>
-                      <span className="text-[11px] text-gray-500">
-                        {role === 'Admin' && 'Full privileges, AWS architecture & CDK config'}
-                        {role === 'Facility Manager' && 'Building energy, anomaly tickets & thresholds'}
-                        {role === 'Collection Team' && 'Driver dispatch, route execution & bin logs'}
-                        {role === 'Analyst' && 'ESG reporting, carbon offsets & CSV exports'}
-                      </span>
-                    </div>
-                    {userRole === role && (
-                      <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                    )}
-                  </button>
-                )
-              )}
-            </div>
+            <button
+              onClick={() => setShowRoleModal(false)}
+              className="text-gray-400 hover:text-gray-600 p-1"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+          <p className="text-[11px] text-gray-500 mt-2 mb-3">
+            Switch roles to experience role-based access control (RBAC) features:
+          </p>
+          <div className="space-y-2">
+            {(['Admin', 'Facility Manager', 'Collection Team', 'Analyst'] as UserRole[]).map(
+              (role) => (
+                <button
+                  key={role}
+                  onClick={() => {
+                    onRoleChange(role);
+                    setShowRoleModal(false);
+                  }}
+                  className={`w-full p-2.5 text-left rounded-xl border flex items-center justify-between text-xs font-medium transition-all ${
+                    userRole === role
+                      ? 'border-emerald-500 bg-emerald-50/70 text-emerald-900 font-semibold ring-1 ring-emerald-500'
+                      : 'border-gray-200 hover:border-gray-300 text-gray-700 hover:bg-gray-50'
+                  }`}
+                >
+                  <div>
+                    <span className="block text-xs font-semibold">{role}</span>
+                    <span className="text-[10px] text-gray-500">
+                      {role === 'Admin' && 'Full privileges, AWS architecture & CDK config'}
+                      {role === 'Facility Manager' && 'Building energy, anomaly tickets & thresholds'}
+                      {role === 'Collection Team' && 'Driver dispatch, route execution & bin logs'}
+                      {role === 'Analyst' && 'ESG reporting, carbon offsets & CSV exports'}
+                    </span>
+                  </div>
+                  {userRole === role && (
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                  )}
+                </button>
+              )
+            )}
           </div>
         </div>
       )}

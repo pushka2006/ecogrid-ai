@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import { CollectionRoute, SmartBin } from '@/lib/types';
 import { optimizeCollectionRoute } from '@/lib/routingEngine';
+import { RealTimeWasteTrackerMap } from '@/components/RealTimeWasteTrackerMap';
 
 interface CollectionRoutingViewProps {
   route: CollectionRoute;
@@ -155,6 +156,20 @@ export const CollectionRoutingView: React.FC<CollectionRoutingViewProps> = ({
             />
           </div>
         </div>
+      </div>
+
+      {/* Real-Time Real GPS Route Map */}
+      <div className="space-y-2">
+        <div className="flex items-center justify-between px-1">
+          <div className="flex items-center gap-2">
+            <Navigation className="w-4 h-4 text-emerald-600 animate-pulse" />
+            <h3 className="text-sm font-bold text-gray-900">Live GPS GIS Route Tracking & Vehicle Dispatch</h3>
+          </div>
+          <span className="text-xs font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full">
+            Real GPS Satellite Active
+          </span>
+        </div>
+        <RealTimeWasteTrackerMap />
       </div>
 
       {/* Manifest & Stops Itinerary */}

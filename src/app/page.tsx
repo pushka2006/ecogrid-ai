@@ -16,6 +16,7 @@ import { SustainabilityImpactCard } from '@/components/SustainabilityImpactCard'
 import { FooterBanner } from '@/components/FooterBanner';
 
 // Sub-Views
+import { RealTimeWasteTrackerView } from '@/components/views/RealTimeWasteTrackerView';
 import { WasteClassificationView } from '@/components/views/WasteClassificationView';
 import { BinMonitoringView } from '@/components/views/BinMonitoringView';
 import { CollectionRoutingView } from '@/components/views/CollectionRoutingView';
@@ -232,6 +233,12 @@ export default function EcoGridDashboard() {
           )}
 
           {/* Sub-Views when respective tab is active */}
+          {activeTab === 'realtime' && (
+            <div className="animate-in fade-in duration-300">
+              <RealTimeWasteTrackerView />
+            </div>
+          )}
+
           {activeTab === 'classification' && (
             <div className="animate-in fade-in duration-300">
               <WasteClassificationView

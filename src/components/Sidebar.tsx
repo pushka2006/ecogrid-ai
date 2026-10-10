@@ -13,10 +13,12 @@ import {
   FileText,
   Bot,
   Settings,
+  Navigation,
 } from 'lucide-react';
 
 export type NavTabId =
   | 'dashboard'
+  | 'realtime'
   | 'classification'
   | 'bins'
   | 'routing'
@@ -35,6 +37,7 @@ interface SidebarProps {
 export const Sidebar: React.FC<SidebarProps> = ({ activeTab, onTabChange }) => {
   const navItems = [
     { id: 'dashboard' as const, label: 'Dashboard', icon: LayoutDashboard },
+    { id: 'realtime' as const, label: 'Real-Time GPS Tracker', icon: Navigation },
     { id: 'classification' as const, label: 'Waste Classification', icon: ScanLine },
     { id: 'bins' as const, label: 'Bin Monitoring', icon: Trash2 },
     { id: 'routing' as const, label: 'Collection & Routing', icon: Truck },
@@ -47,9 +50,9 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeTab, onTabChange }) => {
   ];
 
   return (
-    <aside className="w-64 bg-[#032e20] text-emerald-100 flex flex-col shrink-0 min-h-screen border-r border-[#053d2b] shadow-xl z-20">
+    <aside className="w-64 bg-[#032e20] text-emerald-100 flex flex-col shrink-0 h-screen sticky top-0 border-r border-[#053d2b] shadow-xl z-20 overflow-hidden">
       {/* Brand header at the top of the sidebar matching the screenshot */}
-      <div className="p-5 pb-4">
+      <div className="p-5 pb-4 shrink-0">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-emerald-500 to-teal-400 flex items-center justify-center text-white shadow-md shadow-emerald-950/40 shrink-0">
             <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
@@ -69,7 +72,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeTab, onTabChange }) => {
       </div>
 
       {/* Navigation links list */}
-      <nav className="flex-1 px-3 py-2 space-y-1 overflow-y-auto">
+      <nav className="flex-1 px-3 py-2 space-y-1 overflow-y-auto min-h-0 custom-scrollbar">
         {navItems.map((item) => {
           const Icon = item.icon;
           const isActive = activeTab === item.id;
@@ -90,7 +93,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeTab, onTabChange }) => {
               />
               <span className="truncate">{item.label}</span>
               {isActive && (
-                <span className="ml-auto w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="ml-auto w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shrink-0" />
               )}
             </button>
           );
@@ -98,7 +101,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeTab, onTabChange }) => {
       </nav>
 
       {/* Bottom Promo Card matching screenshot */}
-      <div className="p-3.5 m-3 rounded-2xl bg-[#063f2d] border border-emerald-600/20 text-emerald-100 relative overflow-hidden group">
+      <div className="p-3.5 m-3 shrink-0 rounded-2xl bg-[#063f2d] border border-emerald-600/20 text-emerald-100 relative overflow-hidden group">
         <div className="relative z-10">
           <div className="flex items-center gap-1.5 mb-1">
             <span className="p-1 rounded-md bg-emerald-500/20 text-emerald-300">

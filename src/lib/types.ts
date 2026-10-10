@@ -81,8 +81,28 @@ export interface BuildingEnergy {
   tariffCostINR: number;
   potentialSavingsINR: number;
   status: 'Optimal' | 'Warning' | 'High Waste';
+  statusReason?: string;
   peakDemandKw: number;
   recommendation: string;
+}
+
+export interface MeterUploadHistoryItem {
+  id: string;
+  meterId: string;
+  timestamp: string;
+  imagePreviewUrl?: string;
+  extractedKwh: number;
+  baselineKwh: number;
+  wasteKwh: number;
+  costWasteINR: number;
+  buildingName: string;
+  confidence: number;
+  status: 'Normal' | 'Anomaly / High Waste';
+  ocrDetails: {
+    voltageV: number;
+    powerFactor: number;
+    peakDemandKw: number;
+  };
 }
 
 export interface RenewableDaily {

@@ -12,8 +12,11 @@ import {
   Plus,
   RefreshCw,
   Bell,
+  MapPin,
+  Navigation,
 } from 'lucide-react';
 import { SmartBin } from '@/lib/types';
+import { RealTimeWasteTrackerMap } from '@/components/RealTimeWasteTrackerMap';
 
 interface BinMonitoringViewProps {
   bins: SmartBin[];
@@ -29,6 +32,7 @@ export const BinMonitoringView: React.FC<BinMonitoringViewProps> = ({
   const [selectedBinId, setSelectedBinId] = useState<string>(bins[0]?.id || 'B-12');
   const [filterStatus, setFilterStatus] = useState<string>('All');
   const [isSimulatingIot, setIsSimulatingIot] = useState(false);
+  const [viewMode, setViewMode] = useState<'map' | 'grid'>('map');
 
   const selectedBin = bins.find(b => b.id === selectedBinId) || bins[0];
 
@@ -83,23 +87,48 @@ export const BinMonitoringView: React.FC<BinMonitoringViewProps> = ({
           </div>
         </div>
 
-        {/* Filter buttons */}
-        <div className="flex gap-1.5 bg-gray-100 p-1 rounded-xl text-xs font-semibold">
-          {['All', 'Full', 'Warning', 'Normal'].map((st) => (
+        {/* Mode Toggle & Filter buttons */}
+        <div className="flex flex-wrap items-center gap-2">
+          <div className="flex bg-gray-100 p-1 rounded-xl text-xs font-bold">
             <button
-              key={st}
-              onClick={() => setFilterStatus(st)}
-              className={`px-3 py-1.5 rounded-lg transition-all ${
-                filterStatus === st ? 'bg-white text-gray-900 shadow-xs font-bold' : 'text-gray-500'
+              onClick={() => setViewMode('map')}
+              className={`px-3 py-1.5 rounded-lg flex items-center gap-1.5 transition-all ${
+                viewMode === 'map' ? 'bg-emerald-600 text-white shadow-xs' : 'text-gray-600 hover:text-gray-900'
               }`}
             >
-              {st}
+              <Navigation className="w-3.5 h-3.5" />
+              <span>Real-Time GPS Map</span>
             </button>
-          ))}
+            <button
+              onClick={() => setViewMode('grid')}
+              className={`px-3 py-1.5 rounded-lg flex items-center gap-1.5 transition-all ${
+                viewMode === 'grid' ? 'bg-emerald-600 text-white shadow-xs' : 'text-gray-600 hover:text-gray-900'
+              }`}
+            >
+              <Trash2 className="w-3.5 h-3.5" />
+              <span>IoT Telemetry Grid</span>
+            </button>
+          </div>
+
+          <div className="flex gap-1 bg-gray-100 p-1 rounded-xl text-xs font-semibold">
+            {['All', 'Full', 'Warning', 'Normal'].map((st) => (
+              <button
+                key={st}
+                onClick={() => setFilterStatus(st)}
+                className={`px-2.5 py-1.5 rounded-lg transition-all ${
+                  filterStatus === st ? 'bg-white text-gray-900 shadow-xs font-bold' : 'text-gray-500'
+                }`}
+              >
+                {st}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* Grid: Selected Bin IoT Controller + Fleet Grid */}
+      {viewMode === 'map' ? (
+        <RealTimeWasteTrackerMap />
+      ) : (
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Left: Interactive IoT Sensor Simulator (5 cols) */}
         <div className="lg:col-span-5 bg-white rounded-3xl p-6 border border-gray-200/80 shadow-xs flex flex-col justify-between">
@@ -325,6 +354,7 @@ export const BinMonitoringView: React.FC<BinMonitoringViewProps> = ({
           </div>
         </div>
       </div>
+      )}
     </div>
   );
 };

@@ -62,7 +62,7 @@ export const INITIAL_RECENT_CLASSIFICATIONS: WasteClassificationResult[] = [
     category: 'Organic',
     confidence: 0.88,
     recyclableStatus: 'Compost',
-    disposalGuidance: '100% compostable. Divert from landfill to on-site aerobic composting unit at Central Hostel Quad.',
+    disposalGuidance: '100% compostable. Divert from landfill to on-site aerobic composting unit at Embarcadero Plaza Organics.',
     co2SavingsKg: 0.95,
     weightKg: 0.35,
     timestamp: '2 hours ago',
@@ -79,14 +79,14 @@ export const INITIAL_SMART_BINS: SmartBin[] = [
   {
     id: 'B-12',
     label: 'Bin #B-12',
-    zone: 'North Block',
+    zone: '742 Market St (Market Street Smart Hub)',
     wasteType: 'Plastic & General',
     fillLevel: 92,
     status: 'Full',
     batteryPercent: 84,
     temperatureC: 27,
     lastPing: '3 mins ago',
-    coords: { x: 440, y: 220, lat: 28.545, lng: 77.192 },
+    coords: { x: 440, y: 220, lat: 37.788, lng: -122.404 },
     capacityLiters: 240,
     estimatedWeightKg: 46.2,
     urgentNeedsCollection: true,
@@ -94,14 +94,14 @@ export const INITIAL_SMART_BINS: SmartBin[] = [
   {
     id: 'B-07',
     label: 'Bin #B-07',
-    zone: 'Academic Zone',
+    zone: 'Union Square Plaza (333 Post St)',
     wasteType: 'Paper & Cardboard',
     fillLevel: 88,
     status: 'Warning',
     batteryPercent: 91,
     temperatureC: 26,
     lastPing: '6 mins ago',
-    coords: { x: 380, y: 310, lat: 28.542, lng: 77.195 },
+    coords: { x: 380, y: 310, lat: 37.787, lng: -122.407 },
     capacityLiters: 240,
     estimatedWeightKg: 52.8,
     urgentNeedsCollection: true,
@@ -109,14 +109,14 @@ export const INITIAL_SMART_BINS: SmartBin[] = [
   {
     id: 'B-03',
     label: 'Bin #B-03',
-    zone: 'Hostel Area',
+    zone: 'Embarcadero Ferry Terminal (1 Ferry Building)',
     wasteType: 'Organic Waste',
     fillLevel: 76,
     status: 'Warning',
     batteryPercent: 78,
     temperatureC: 31,
     lastPing: '12 mins ago',
-    coords: { x: 260, y: 410, lat: 28.539, lng: 77.188 },
+    coords: { x: 260, y: 410, lat: 37.795, lng: -122.393 },
     capacityLiters: 240,
     estimatedWeightKg: 68.4,
     urgentNeedsCollection: true,
@@ -124,14 +124,14 @@ export const INITIAL_SMART_BINS: SmartBin[] = [
   {
     id: 'B-01',
     label: 'Bin #B-01',
-    zone: 'Main Cafeteria',
+    zone: 'Mission District Transit Station (24th & Mission St)',
     wasteType: 'Organic Waste',
     fillLevel: 64,
     status: 'Normal',
     batteryPercent: 88,
     temperatureC: 28,
     lastPing: '8 mins ago',
-    coords: { x: 520, y: 360, lat: 28.541, lng: 77.198 },
+    coords: { x: 520, y: 360, lat: 37.752, lng: -122.418 },
     capacityLiters: 360,
     estimatedWeightKg: 58.0,
     urgentNeedsCollection: false,
@@ -139,14 +139,14 @@ export const INITIAL_SMART_BINS: SmartBin[] = [
   {
     id: 'B-05',
     label: 'Bin #B-05',
-    zone: 'Engineering Block',
+    zone: 'Financial District Recycling Center (555 California St)',
     wasteType: 'Metal & Cans',
     fillLevel: 18,
     status: 'Normal',
     batteryPercent: 95,
     temperatureC: 25,
     lastPing: '15 mins ago',
-    coords: { x: 210, y: 260, lat: 28.544, lng: 77.185 },
+    coords: { x: 210, y: 260, lat: 37.792, lng: -122.404 },
     capacityLiters: 240,
     estimatedWeightKg: 9.5,
     urgentNeedsCollection: false,
@@ -154,14 +154,14 @@ export const INITIAL_SMART_BINS: SmartBin[] = [
   {
     id: 'B-09',
     label: 'Bin #B-09',
-    zone: 'Science Complex',
+    zone: 'Pier 39 Visitor Terminal (Beach St & Embarcadero)',
     wasteType: 'Glass & Lab Vials',
     fillLevel: 45,
     status: 'Normal',
     batteryPercent: 82,
     temperatureC: 24,
     lastPing: '18 mins ago',
-    coords: { x: 590, y: 210, lat: 28.546, lng: 77.202 },
+    coords: { x: 590, y: 210, lat: 37.808, lng: -122.409 },
     capacityLiters: 240,
     estimatedWeightKg: 34.0,
     urgentNeedsCollection: false,
@@ -169,14 +169,14 @@ export const INITIAL_SMART_BINS: SmartBin[] = [
   {
     id: 'B-14',
     label: 'Bin #B-14',
-    zone: 'Sports Pavilion',
+    zone: 'Fisherman’s Wharf Promenade (Jefferson St)',
     wasteType: 'General Waste',
     fillLevel: 72,
     status: 'Warning',
     batteryPercent: 73,
     temperatureC: 29,
     lastPing: '22 mins ago',
-    coords: { x: 310, y: 150, lat: 28.548, lng: 77.189 },
+    coords: { x: 310, y: 150, lat: 37.808, lng: -122.415 },
     capacityLiters: 240,
     estimatedWeightKg: 41.2,
     urgentNeedsCollection: false,
@@ -184,14 +184,14 @@ export const INITIAL_SMART_BINS: SmartBin[] = [
   {
     id: 'B-02',
     label: 'Bin #B-02',
-    zone: 'Library Quad',
+    zone: 'SoMa Innovation Quad (4th St & Howard St)',
     wasteType: 'Paper',
     fillLevel: 52,
     status: 'Normal',
     batteryPercent: 90,
     temperatureC: 25,
     lastPing: '5 mins ago',
-    coords: { x: 470, y: 460, lat: 28.537, lng: 77.194 },
+    coords: { x: 470, y: 460, lat: 37.784, lng: -122.401 },
     capacityLiters: 240,
     estimatedWeightKg: 28.6,
     urgentNeedsCollection: false,
@@ -199,14 +199,14 @@ export const INITIAL_SMART_BINS: SmartBin[] = [
   {
     id: 'B-16',
     label: 'Bin #B-16',
-    zone: 'South Gate Terminal',
+    zone: 'South Van Ness Transit Hub (100 S Van Ness Ave)',
     wasteType: 'Plastic & Film',
     fillLevel: 82,
     status: 'Warning',
     batteryPercent: 67,
     temperatureC: 29,
     lastPing: '11 mins ago',
-    coords: { x: 620, y: 480, lat: 28.535, lng: 77.205 },
+    coords: { x: 620, y: 480, lat: 37.773, lng: -122.418 },
     capacityLiters: 240,
     estimatedWeightKg: 39.8,
     urgentNeedsCollection: true,
@@ -229,7 +229,7 @@ export const INITIAL_COLLECTION_ROUTE: CollectionRoute = {
     {
       stopNumber: 1,
       binId: 'B-12',
-      locationName: 'North Block (Plastics & General)',
+      locationName: '742 Market St (Market Street Smart Hub)',
       fillLevel: 92,
       wasteType: 'Plastic & General',
       estimatedKg: 46.2,
@@ -238,7 +238,7 @@ export const INITIAL_COLLECTION_ROUTE: CollectionRoute = {
     {
       stopNumber: 2,
       binId: 'B-07',
-      locationName: 'Academic Zone (Paper)',
+      locationName: 'Union Square Plaza (333 Post St)',
       fillLevel: 88,
       wasteType: 'Paper & Cardboard',
       estimatedKg: 52.8,
@@ -247,7 +247,7 @@ export const INITIAL_COLLECTION_ROUTE: CollectionRoute = {
     {
       stopNumber: 3,
       binId: 'B-03',
-      locationName: 'Hostel Area (Organic)',
+      locationName: 'Embarcadero Ferry Terminal (1 Ferry Building)',
       fillLevel: 76,
       wasteType: 'Organic Waste',
       estimatedKg: 68.4,
@@ -256,7 +256,7 @@ export const INITIAL_COLLECTION_ROUTE: CollectionRoute = {
     {
       stopNumber: 4,
       binId: 'B-16',
-      locationName: 'South Gate Terminal (Plastics)',
+      locationName: 'South Van Ness Transit Hub (100 S Van Ness Ave)',
       fillLevel: 82,
       wasteType: 'Plastic & Film',
       estimatedKg: 39.8,
@@ -265,7 +265,7 @@ export const INITIAL_COLLECTION_ROUTE: CollectionRoute = {
     {
       stopNumber: 5,
       binId: 'DEPOT',
-      locationName: 'Central Recycling & Composting Yard',
+      locationName: 'Recology San Francisco Recycling Yard (501 Tunnel Ave)',
       fillLevel: 0,
       wasteType: 'Transfer Depot',
       estimatedKg: 207.2,
@@ -299,7 +299,7 @@ export const INITIAL_HOURLY_ENERGY: EnergyHourlyReading[] = [
 export const INITIAL_BUILDINGS_ENERGY: BuildingEnergy[] = [
   {
     id: 'BLD-A',
-    name: 'North Block (Classrooms & Labs)',
+    name: '742 Market St Center (Tech & Lab Tower)',
     areaSqM: 12500,
     currentKwh: 2450,
     baselineKwh: 2380,
@@ -312,7 +312,7 @@ export const INITIAL_BUILDINGS_ENERGY: BuildingEnergy[] = [
   },
   {
     id: 'BLD-B',
-    name: 'Building B (Computer Science & Data Center)',
+    name: '555 California St (Data & Financial Center)',
     areaSqM: 9800,
     currentKwh: 3120,
     baselineKwh: 2420,
@@ -325,7 +325,7 @@ export const INITIAL_BUILDINGS_ENERGY: BuildingEnergy[] = [
   },
   {
     id: 'BLD-C',
-    name: 'Hostel Complex & Dining Halls',
+    name: 'Mission Bay Bio-Tech Complex',
     areaSqM: 16200,
     currentKwh: 1980,
     baselineKwh: 2100,
@@ -338,7 +338,7 @@ export const INITIAL_BUILDINGS_ENERGY: BuildingEnergy[] = [
   },
   {
     id: 'BLD-D',
-    name: 'Central Library & Admin Pavilion',
+    name: 'SoMa Tech Pavilion & Library',
     areaSqM: 7400,
     currentKwh: 1100,
     baselineKwh: 990,
@@ -365,7 +365,7 @@ export const INITIAL_ALERTS: SystemAlert[] = [
   {
     id: 'alt-1',
     title: 'Bin B-12 is 92% full',
-    subtitle: 'North Block • 15 min ago',
+    subtitle: '742 Market St • 15 min ago',
     timeAgo: '15 min ago',
     type: 'full',
     color: 'red',
@@ -375,7 +375,7 @@ export const INITIAL_ALERTS: SystemAlert[] = [
   {
     id: 'alt-2',
     title: 'Energy spike detected',
-    subtitle: 'Building B • 45 min ago',
+    subtitle: '555 California St • 45 min ago',
     timeAgo: '45 min ago',
     type: 'spike',
     color: 'amber',
@@ -417,20 +417,20 @@ export const INITIAL_CHAT_MESSAGES: ChatMessage[] = [
     text: `Based on current fill levels and urgency, here are the top 3 bins to collect:
 
 1. **Bin B-12 (92%)** — Plastic & General
-   *Located at North Block*
+   *Located at 742 Market St (Market Street Smart Hub)*
    High priority due to near-full level.
 
 2. **Bin B-07 (88%)** — Paper
-   *Located at Academic Zone*
+   *Located at Union Square Plaza (333 Post St)*
    Expected to be full within 6 hours.
 
 3. **Bin B-03 (76%)** — Organic
-   *Located at Hostel Area*
+   *Located at Embarcadero Ferry Terminal (1 Ferry Building)*
    High organic waste accumulation.
 
 Collecting these first will help prevent overflow and reduce odor and contamination risks.`,
     timestamp: '10:42 AM',
-    sources: ['Bin telemetry data', 'Campus collection rules', 'Ultrasonic sensor logs'],
+    sources: ['Bin telemetry data', 'City collection rules', 'Ultrasonic sensor logs'],
     suggestedFollowUps: [
       'Which building has the highest avoidable electricity consumption?',
       'What percentage of reported waste is potentially recyclable?',
