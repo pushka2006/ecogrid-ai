@@ -5,16 +5,23 @@ echo "============================================================"
 echo " EcoGrid AI — AWS S3 One-Line CloudShell Deployer"
 echo "============================================================"
 
-# Clone or update
-if [ -d "ecogrid-ai" ]; then
+# Clone or update if not already inside the repo
+if [ -f "package.json" ]; then
+  echo "Already inside project directory."
+elif [ -d "ecogrid-ai" ]; then
   cd ecogrid-ai
   git pull
+elif [ -d "ecogrid-app" ]; then
+  cd ecogrid-app
 else
   git clone https://github.com/pushka2006/ecogrid-ai.git
   cd ecogrid-ai
 fi
 
-cd ecogrid-app
+# If repository contains a subfolder named ecogrid-app, enter it
+if [ -d "ecogrid-app" ]; then
+  cd ecogrid-app
+fi
 
 echo "[1/4] Installing dependencies & building production export..."
 export STATIC_EXPORT=true
